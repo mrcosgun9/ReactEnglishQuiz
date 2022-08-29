@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body{
+  @apply font-mono;
+}
+/* button */
+button{
+  @apply rounded px-6 py-2 text-lg font-thin shadow-sm transition-all hover:shadow-md;
+}
+.btn-sucess{
+   @apply bg-green-500 text-white hover:bg-green-600;
+}
+.btn-primary{
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+.app-container{
+  @apply w-full h-screen;
+}
+.menu h1{
+@apply font-black text-4xl mb-2 text-gray-800;
+}
+.menu h3{
+  @apply mb-3 font-bold text-lg;
+}
+.question-container{
+  @apply w-full flex flex-col;
+}
+.question-container .line{
+  @apply w-full my-2 border border-t-gray-200 ;
+}
+.question-container h3{
+  @apply w-full text-sm font-bold text-gray-800 ;
+}
+.question-container .question-items{
+  @apply w-full flex justify-center  gap-3 ;
+}
+
+.question-container .question-items button{
+  @apply text-xs border border-gray-800 px-4 py-1 font-bold;
+}
+.question-container .question-items .selected{
+ @apply bg-blue-100;
+}
+#incorect{
+  @apply bg-red-200;
+}
+#correct{
+  @apply bg-green-400;
+}

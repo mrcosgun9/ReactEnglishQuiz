@@ -13,7 +13,7 @@ function App() {
   const shuffleArray = (arr: IQuestion[]) => arr.sort(() => Math.random() - 0.5)
   useEffect(() => {
     async function getQuestion() {
-      const res = await fetch("https://opentdb.com/api.php?amount=10&category=18&encode=base64");
+      const res = await fetch("https://opentdb.com/api.php?amount=5&category=18&encode=base64");
       const data = await res.json();
       console.log(data);
 
@@ -72,10 +72,18 @@ function App() {
     setStarted(x => !x);
   }
   return (
-    <div className='container'>
-      {started ? questionElement : <Menu start={start} />}
-      <div><button onClick={checked ? handlePlayAgain : handleCheck}>{checked ? "Play Again" : "Check Answer"}</button></div>
+    <div className='container mx-auto'>
+      <div className='w-full min-h-screen px-3  text-center flex flex-col align-middle items-center justify-center'>
+        {started ? questionElement : <Menu start={start} />}
+        <div className='mt-4'>
+          <div className='mb-2'>
+            {checked && <span className=''>You scored {correct}/5 correct answers.</span>}
+          </div>
+          {started ? <button className='btn-primary' onClick={checked ? handlePlayAgain : handleCheck}>{checked ? "Play Again" : "Check Answer"}</button> : <></>}
+        </div>
+      </div>
     </div>
+
   )
 }
 

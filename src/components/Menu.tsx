@@ -2,10 +2,10 @@ import React from 'react'
 
 function Menu(props: { start: () => void }) {
   return (
-    <div>
-      <h1>English Quizz</h1>
-      <span>Description</span>
-      <button onClick={() => props.start()}>Start Quizz</button>
+    <div className='menu'>
+      <h1>Computer Questions</h1>
+      <h3>Description</h3>
+      <button className='btn btn-sucess' onClick={() => props.start()}>Start Quizz</button>
     </div>
   )
 }

@@ -3,6 +3,13 @@ import { nanoid } from "nanoid";
 import IQuestion from '../types/questionType';
 function Question(props: { q: IQuestion, id: string, handleClickAnswer: (id: string, answer: any) => void }) {
   let answers = props.q.answers;
+
+  function handleClick(answer: any) {
+    if (props.q.checked) {
+      return;
+    }
+    props.handleClickAnswer(props.id, answer);
+  }
   const answersElements = answers.map(answer => {
     let id: string = "";
     if (props.q.checked) {
@@ -17,15 +24,20 @@ function Question(props: { q: IQuestion, id: string, handleClickAnswer: (id: str
       }
     }
     return (
-      <button key={nanoid()} id={id} className={answer === props.q.selected ? "answer selected" : "answer"}>
+      <button key={nanoid()} id={id} className={answer === props.q.selected ? "answer selected" : "answer"} onClick={() => handleClick(answer)}>
         {atob(answer)}
       </button>
     )
   })
+
   return (
-    <div>
+    <div className='question-container'>
       <h3>{atob(props.q.question)}</h3>
-      {answersElements}</div>
+      <div className='question-items'>
+        {answersElements}
+      </div>
+      <div className='line'></div>
+    </div>
   )
 }
 
