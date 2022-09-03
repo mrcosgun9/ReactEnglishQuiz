@@ -36,7 +36,7 @@ function Question(props: { q: IQuestion, id: string, handleClickAnswer: (id: str
       <div className='question-items'>
         {answersElements}
       </div>
-      <div className='line'></div>
+
     </div>
   )
 }

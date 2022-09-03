@@ -74,7 +74,10 @@ function App() {
   return (
     <div className='container mx-auto'>
       <div className='w-full min-h-screen px-3  text-center flex flex-col align-middle items-center justify-center'>
-        {started ? questionElement : <Menu start={start} />}
+        <div className='divide-y-2'>
+          {started ? questionElement : <Menu start={start} />}
+        </div>
+
         <div className='mt-4'>
           <div className='mb-2'>
             {checked && <span className=''>You scored {correct}/5 correct answers.</span>}

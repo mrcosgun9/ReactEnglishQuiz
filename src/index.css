@@ -24,16 +24,13 @@ button{
   @apply mb-3 font-bold text-lg;
 }
 .question-container{
-  @apply w-full flex flex-col;
-}
-.question-container .line{
-  @apply w-full my-2 border border-t-gray-200 ;
+  @apply w-full flex flex-col text-left  py-3;
 }
 .question-container h3{
-  @apply w-full text-sm font-bold text-gray-800 ;
+  @apply w-full text-sm font-bold text-gray-800 pb-2;
 }
 .question-container .question-items{
-  @apply w-full flex justify-center  gap-3 ;
+  @apply w-full flex justify-start gap-3  ;
 }
 
 .question-container .question-items button{
