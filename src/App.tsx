@@ -74,7 +74,7 @@ function App() {
   return (
     <div className='container mx-auto'>
       <div className='w-full min-h-screen px-3  text-center flex flex-col align-middle items-center justify-center'>
-        <div className=' divide-y-2'>
+        <div className='w-full divide-y-2'>
           {started ? questionElement : <Menu start={start} />}
         </div>
 

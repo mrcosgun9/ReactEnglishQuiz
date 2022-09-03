@@ -30,7 +30,7 @@ button{
   @apply w-full text-sm font-bold text-gray-800 pb-2;
 }
 .question-container .question-items{
-  @apply w-full flex justify-start gap-3  ;
+  @apply w-full flex flex-wrap justify-start gap-3  ;
 }
 
 .question-container .question-items button{
